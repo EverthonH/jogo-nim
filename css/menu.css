@@ -1,0 +1,66 @@
+.page-menu2{
+	
+	background: linear-gradient(90deg, #03a9f4, #f441a5, #ffed3b,#03a9f4 );
+	background-size: 400%;
+	border-radius: 34%;
+	z-index: 1;
+
+}
+.page-menu2:hover{
+	animation: animate 8s linear infinite;
+}
+@keyframes animate{
+	0%
+	{
+		background-position: 0%;
+	}
+	100%
+	{
+		background-position: 400%;
+	}
+}
+.page-menu2:before{
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	right: -5px;
+	bottom: -5px;
+	z-index: -1;
+	background: linear-gradient(90deg, #03a9f4, #f441a5, #ffed3b,#03a9f4 );
+	background-size: 400%;
+	filter: blur(20px);
+	opacity: 0;
+	transition: 0.5s;
+
+}
+.page-menu2:hover:before{
+	filter: blur(20px);
+	opacity: 1;
+	animation: animate 8s linear infinite;
+}
+
+.page-menu2:hover:before{
+	filter: blur(20px);
+	opacity: 1;
+	animation: animate 8s linear infinite;
+}
+.page-menu2 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+}
+.page-menu2 li {
+    line-height: 50px;
+    margin-left: -25px;
+}
+.page-menu2 li:last-child {
+    line-height: 90px;
+}
+.page-menu2 li a {
+    color: #fff;
+    font-size: 26px;
+    position: relative;
+    font-weight: 500;    
+}

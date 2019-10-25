@@ -11,27 +11,27 @@ header{
 
 h1{
 	text-align: center;
-	font-size: 150px;
+	font-size: 100px;
 	padding: 75px;
 	color: white;
 	margin: 0px;
 
 }
-h3{
-	color:#ffff;
-  font-size: 40px;
-
+h2{
+  text-align: center;
+  font-size: 60px;
+  padding: 75px;
+  color: #ffff;
+  margin: 0px;
 }
+
 body{
-	background-color: black;
+  background: #112c38;
 	text-align: center;
+  background-size:100%;
 }
 
-.img-sobre {
-	width: 202px;
-    height: 203px;
 
-}
 
 .btn {
 	width: 209px;
@@ -69,6 +69,8 @@ body{
   animation-duration: 1s;
    animation-iteration-count: infinite;
    text-align: center;
+    height: 100%;
+    width: 0%;
 }
 
 
@@ -80,7 +82,7 @@ body{
 }
 
 
-@keyframes cor_fonte {
+@keyframes nim {
   0%   {color: red;}
   25%  {color: yellow;}
   50%  {color: blue;}
