@@ -1,66 +1,456 @@
-.page-menu2{
-	
-	background: linear-gradient(90deg, #03a9f4, #f441a5, #ffed3b,#03a9f4 );
-	background-size: 400%;
-	border-radius: 34%;
-	z-index: 1;
+<!DOCTYPE html>
+<html lang="br">
+<head>
+<title>Jogo-Nim</title>
+<link rel="stylesheet" type="text/css" href="css/menu.css">
+<link rel="stylesheet icon" href="icon.png">
+
+<style> 
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+body {
+    font-family: 'Lora', serif;    overflow: hidden;
+    margin: 0;
+    padding: 0;
+   
+}
+.gui1-up {
+    top: -40px;
+}
+li {
+    list-style: none;
+}
+.main {
+    background: url(space.jpg) no-repeat;
+    background-size: cover;
+    display: table;
+    width: 100%;
+    position: relative;
+}
+.main:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: -1;
+    opacity: .85;
+    position: absolute;    
+}
+    .gui1{
+        margin-left: 990px;
+        margin-top: -540px;
+    }
+.main-title {
+    font-size: 24px;
+    line-height: 28px;
+    color: #fff;
+    font-weight: 400;
+}
+.abertura {
+    color: #fff;
+    line-height: 51px;
 
 }
-.page-menu2:hover{
-	animation: animate 8s linear infinite;
+.main-xau {
+    padding: 0 60px;
+    vertical-align: middle;
+    display: table-cell;
+    height: 100%;
+    width: 100%;
 }
-@keyframes animate{
-	0%
-	{
-		background-position: 0%;
-	}
-	100%
-	{
-		background-position: 400%;
-	}
+    .logo a{
+        color: orange;
+        margin-left: 30px;         
+        border: 1px solid white;
+        background: white;
+        font-size: 30px;
+    }
+    .logo a:hover{
+        text-decoration: none;
+    }
+.deus-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    opacity: 0;
+    visibility: hidden;   
+    transition: opacity 0.3s 0s, visibility 0s 0.3s;
 }
-.page-menu2:before{
-	content: '';
-	position: absolute;
-	top: -5px;
-	left: -5px;
-	right: -5px;
-	bottom: -5px;
-	z-index: -1;
-	background: linear-gradient(90deg, #03a9f4, #f441a5, #ffed3b,#03a9f4 );
-	background-size: 400%;
-	filter: blur(20px);
-	opacity: 0;
-	transition: 0.5s;
+.deus-menu .gui2 {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding: 50px;
+    height: 45px;
+    width: 45px;
+    border-radius: 0%;
+    background:rgba(0, 0, 0, 0.3) url(x.svg)no-repeat center center;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;     
+    transform: scale(0), visibility 0s 0.3s, opacity 0.3s 0s;
+    transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+}
 
+.no-touch .deus-menu .gui2:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
-.page-menu2:hover:before{
-	filter: blur(20px);
-	opacity: 1;
-	animation: animate 8s linear infinite;
+.deus-menu.visao {
+    background-size: 100%;
+    opacity: 1;
+    visibility: visible;   
+    transition: opacity 0.7s, visibility 0s;
 }
-
-.page-menu2:hover:before{
-	filter: blur(20px);
-	opacity: 1;
-	animation: animate 8s linear infinite;
+.deus-menu.visao .deusmenu-xau {
+    -webkit-overflow-scrolling: touch;
 }
-.page-menu2 {
+.deus-menu.visao .gui2 {
+    visibility: visible;
+    opacity: 1;    
+    transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;     
+    transform: scale(1);
+}
+@media only screen and (min-width: 1100px) {
+    .deus-menu .deusmenu-xau {
+        padding: 6em 5%;
+    }
+    .deus-menu .gui2 {
+        height: 60px;
+        width: 60px;
+    }
+    .deus-menu p {
+        font-size: 25px;
+    }
+}
+.alguma-coisa {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+.alguma-coisa .bagui-doido {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-2%);   
+    transform: translateY(-50%) translateX(-2%);     
+    height: 100%;
+    width: 2500%;
+    background: url(space3.jpg) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+.alguma-coisa.visao {
+    opacity: 1;
+    visibility: visible;
+}
+.alguma-coisa.abrir .bagui-doido {     
+    animation: cd-sequence 1.0s steps(24);     
+    animation-fill-mode: forwards;
+}
+.alguma-coisa.closing .bagui-doido {     
+    animation: cd-sequence-reverse 1.0s steps(24);    
+    animation-fill-mode: forwards;
+}
+.no-cssanimations .alguma-coisa {
+    display: none;
+} 
+@keyframes cd-sequence {
+    0% {
+        transform: translateY(-50%) translateX(-2%);
+    }
+    100% {        
+        transform: translateY(-50%) translateX(-98%);
+    }
+} 
+@keyframes cd-sequence-reverse {
+    0% {
+         
+        transform: translateY(-50%) translateX(-98%);
+    }
+    100% {
+         
+        transform: translateY(-50%) translateX(-2%);
+    }
+}
+.deus-menu .deusmenu-xau {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+.page-menu {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
     color: black;
+    left: 50%;
+    top: 30%;
+    bottom: 20px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+} 
+.page-menu li {
+    line-height: 67px;
+    margin-left: 0;
+    margin: 5px 5px;
+    width: 10px;
+    height: 78px;
 }
-.page-menu2 li {
-    line-height: 50px;
-    margin-left: -25px;
-}
-.page-menu2 li:last-child {
+.page-menu li:last-child {
     line-height: 90px;
 }
-.page-menu2 li a {
+.page-menu li a {
     color: #fff;
     font-size: 26px;
     position: relative;
     font-weight: 500;    
 }
+header {
+    position: fixed;
+    padding: 30px;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.gui1 {
+    width: 34px;
+    height: 50px;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    margin-top: 7px;
+    position: absolute;
+    left: -47%;
+    top:100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    }
+.gui1 span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    opacity: 1;    
+    transform: rotate(0deg);   
+    transition: .25s ease-in-out;
+}
+.gui1 span:nth-child(1) {
+    top: 0px;     
+    transform-origin: left center;
+}
+.gui1 span:nth-child(2) {
+    top: 6px;    
+    transform-origin: left center;
+}
+.gui1 span:nth-child(3) {
+    top: 12px;     
+    transform-origin: left center;
+    width: 60%;
+    right: 0 !important;
+}
+.gui1:hover span:nth-child(3) {
+    width: 100%;
+} 
+
+.ti{
+    color: #ffff;
+    text-shadow: 3px 3px 3px black;
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+    width: 100%;
+    font-size: 50px;
+}
+.abertura{
+    font-family: 'Lora', serif;
+    font-size: 200px;
+    
+
+}
+.hh{
+    font-size: 70px;
+    font-family: 'IM Fell English SC', serif;
+}
+a{
+    text-decoration:none;
+}  
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <h1 class="gui1"></h1>
+    </div>
+    <div class = "gui1">
+        <span></span>
+        <span></span>
+        <span></span>
+</header>
+<div class="deus-menu">
+    <div class="deusmenu-xau">
+        <ul class="page-menu">
+            <li><a href="jogo"  class="page-menu2">Jogar</a></li>
+            <li><a href="sobre" class="page-menu2">Sobre</a></li>
+            <li><a href="ajuda" class="page-menu2">Ajuda</a></li>
+            <li><a></a></li>
+        </ul>
+    </div>
+    <a href="" class="gui2"></a>
+</div>
+<div class="alguma-coisa visao abrir"> 
+    <div class="bagui-doido"></div>
+</div>
+<div class="wrapper">
+<section class="main">
+    <div class="main-xau">
+        <div class="ti">
+        <span class="abertura">NIM</span>
+        </div>
+    </div>   
+</section>
+<script src="jquery-2.1.4.min.js"></script>
+ <script>
+ 'use strict'; 
+$(document).ready( function() {
+var width = 100,
+        perfData = window.performance.timing, 
+        EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart),
+        time = ((EstimatedTime/1000)%50) * 25
+    var PercentageID = $(".percentage"),
+            start = 0,
+            end = 100,
+            durataion = time;
+            animateValue(PercentageID, start, end, durataion);
+    function animateValue(id, start, end, duration) {
+        var range = end - start,
+          current = start,
+          increment = end > start? 1 : -1,
+          stepTime = Math.abs(Math.floor(duration / range)),
+          obj = $(id);
+          var timer = setInterval(function() {
+            current += increment;
+            $(obj).text(current);
+          
+            if (current == end) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }
+    setTimeout(function(){
+        $('.preloader').fadeOut();
+        
+        $('.alguma-coisa').addClass('closing').delay(1000).queue(function(){
+            $(this).removeClass("visao closing abrir").dequeue();
+        });
+    }, time);
+    $(document).on("click", "a:not(.lightbox)", function () {
+        var newUrl = $(this).attr("href");
+        if (!newUrl || newUrl[0] === "#") {
+            location.hash = newUrl;
+            return;
+        }
+        $("html").fadeOut(function () {
+            location = newUrl;
+        });
+        return false;
+    });
+    var paget = $(".page-title .title").text();
+    $( ".page-title").append("<span></span>");
+    $( ".page-title span").append(paget);
+    $('.blog-post .blog-link').hover(function(){
+        $(this).parent('.xau-outter').parent('.blog-post').toggleClass('mousef');
+        $(this).parent('.blog-post').toggleClass('mousef');
+    });
+});
+$(window).load( function() {
+function smokeeffect () { 
+    var modalTrigger = $('.gui1'),
+        transitionLayer = $('.alguma-coisa'),
+        transitionBackground = transitionLayer.children(),
+        modalWindow = $('.deus-menu');
+    var frameProportion = 1.78, 
+        frames = 25, 
+        resize = false;
+    setLayerDimensions();
+    $(window).on('resize', function(){
+        if( !resize ) {
+            resize = true;
+            (!window.requestAnimationFrame) ? setTimeout(setLayerDimensions, 300) : window.requestAnimationFrame(setLayerDimensions);
+        }
+    });
+    modalTrigger.on('click', function(event){   
+        event.preventDefault();
+        transitionLayer.addClass('visao abrir');
+        var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
+        setTimeout(function(){
+            modalWindow.addClass('visao');
+        }, delay);
+    });
+    modalWindow.on('click', '.gui2', function(event){
+        event.preventDefault();
+        transitionLayer.addClass('closing');
+        modalWindow.removeClass('visao');
+        transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+            transitionLayer.removeClass('closing abrir visao');
+            transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+        });
+    });
+    function setLayerDimensions() {
+        var windowWidth = $(window).width(),
+            windowHeight = $(window).height(),
+            layerHeight, layerWidth;
+
+        if( windowWidth/windowHeight > frameProportion ) {
+            layerWidth = windowWidth;
+            layerHeight = layerWidth/frameProportion;
+        } else {
+            layerHeight = windowHeight*1.2;
+            layerWidth = layerHeight*frameProportion;
+        }
+        transitionBackground.css({
+            'width': layerWidth*frames+'px',
+            'height': layerHeight+'px',
+        });
+        resize = false;
+    }
+}
+smokeeffect()
+     function homeh() {
+        var hometext = $('.main')
+        hometext.css({
+            "height": $(window).height() + "px"
+        });
+    }
+    homeh();
+    $(window).resize(homeh);
+    $( ".page-menu li:not(.imagens) a, .portfolio_filter ul li a").append( "<span></span>" );
+
+    $('.gui1').on("click", function(){
+            $(this).toggleClass('gui2');
+    });     
+});   
+</script>
+
+    </div>  
+    </body>
+</html>
+
+
+
+<!-- Canal de onde retirou o menu https://www.youtube.com/channel/UCbwXnUipZsLfUckBPsC7Jog -->
