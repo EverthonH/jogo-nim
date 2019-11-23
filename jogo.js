@@ -91,14 +91,114 @@ for(i = 0;i<tabela.length;i++){
 });
 
 app.get("/sobre", function(req, res){
-	res.render(__dirname + "/paginas/sobre.html");
-});
-app.get("/contato", function(req, res){
-	res.render(__dirname + "/paginas/contato.html");
-});
+	res.write('<!DOCTYPE html>')
+res.write('<html lang="br">')
+res.write('<head>')
+	res.write('<meta charset="UTF-8">')
 
+	res.write('<title>Sobre o Nim</title>')
+	res.write('<!-- Link para o css -->') 
+	res.write('<link rel="stylesheet" type="text/css" href="css/sobre.css">')
+	res.write ('<link rel="stylesheet icon" href="icon.png">')
+res.write('</head>')
+res.write('<body>')
+	res.write('<!-- Contatos -->')
+	res.write('<div class="container">')
+		res.write('<div class="box">')
+			res.write('<div class="imgbx">')
+				res.write('<img src="img1.jpg">')
+			res.write('</div>')
+			res.write('<div class="content">')
+				res.write('<div>')
+					res.write('<h2>Lucas R</h2>')
+					res.write('<p>Meu nome é Lucas Robson, um dos desenvolvedores do jogo NIM</br>qualquer duvida pode entrar em contato com o E-mail: lrmds@discente.ifpe.edu.brres.write</p>')
+				res.write('</div>')
+			res.write('</div>')
+		res.write('</div>')
+		res.write('<div class="box">')
+			res.write('<div class="imgbx">')
+				res.write('<img src="img3.jpg">')
+			res.write('</div>')
+			res.write('<div class="content">')
+				res.write('<div>')
+					res.write('<h2>Everthon H</h2>')
+					res.write('<p>Meu nome é Everthon Henrique, um dos desenvolvedores do jogo NIM</br>qualquer duvida pode entrar em contato com o E-mail: ehpb@discente.ifpe.edu.br</p>')
+				res.write('</div>')
+			res.write('</div>')
+		res.write('</div> ')
+
+		res.write('<div class="box">')
+			res.write('<div class="imgbx">')
+				res.write('<img src="capture.png">')
+			res.write('</div>')
+			res.write('<div class="content">')
+				res.write('<div>')
+					res.write('<h2>Guilherme V</h2>')
+					res.write('<p>Meu nome é Guilherme Valença, um dos desenvolvedores do jogo NIM</br>qualquer duvida pode entrar em contato com o E-mail gvrp@discente.ifpe.edu.br</p>')
+				res.write('</div>')
+			res.write('</div>')
+		res.write('</div>')
+		res.write('<div class="box">')
+			res.write('<div class="imgbx">')
+				res.write('<img src="img4.png">')
+			res.write('</div>')
+			res.write(('<div class="content">'))
+				res.write('<div>')
+					res.write('<h2>Allan L</h2>')
+					res.write('<p>Meu nome é Allan Lima, o Professor Responsavel pelo projeto do jogo NIM</br>qualquer duvida pode entrar em contato com o E-mail: allanlima@igrassu.ifpe.edu.br</p>')
+				res.write('</div>')
+			res.write('</div>')
+		res.write('</div>')
+	res.write('<div class="go">')
+	 res.write ('<p class="pp">Verção 0.2--22/11/2019.</br>IFPE -Instututo Federal de Edurção Ciencia e Tecnologia de Pernambuco </br>Lógica de programação.</br>')
+	res.write('</p>')
+	res.write('<img class="img-sobre" src="logo.png">')
+	res.write('<ul style="position: absolute; left: 0; bottom: 20px;">')
+	res.write('<li><a href="/">Voltar</a></li>')
+	res.write('</ul>')
+
+	
+res.write('</body>')
+res.write('</html>')
+
+});
 app.get("/ajuda", function(req, res){
-	res.render(__dirname + "/paginas/ajuda.html");
+	
+res.write('<!DOCTYPE html>')
+res.write('<html lang="br">')
+res.write('<head>')
+res.write('<meta charset="UTF-8">')
+res.write('<title>Ajuda</title>')
+	
+		<!-- Link pra o css --> 
+res.write('<link rel="stylesheet" type="text/css" href="css/ajuda.css">')
+res.write('<link rel="stylesheet icon" href="icon.png">')
+res.write('</head>')
+res.write('<body>')
+
+res.write('<h1 class="tex">Instruções do Jogo</h1>')
+
+res.write('<p >Cada jogada consiste em retirar algumas (ou todas) as peças de um dos montes.<br />Os números de peças e de montes podem variar, sendo a distribuição mais comum<br /> constituida por 15 peças em montes de 1,2,3,4 e 5 peças.<br />')
+res.write('</p>')
+res.write('<h2 class="tex">ORIGEM DO NIM</h2>')
+	
+res.write('<p>Nim é um jogo que foi criando na antiga China para dois jogadores. Foi o primeiro jogo a ser estudado pela Matemática.</p>')
+
+res.write('<h2 class="tex" >HISTORIA</h2>')
+res.write('<p>A origem do NIM é desconhecida, sendo jogado desde a antiguidade. O nome foi dado por um Matematico Americano chamado Charles L.<br /> Bouton em um artigo de 1902, onde estuda a teoria matemática do jogo.</br> O jogo ganhou notoriedade com a aparição no filme "O ano passado em Marienbad" de Alain Resnais, em 1961.</p>')
+
+	
+
+		
+res.write('<ul>')
+res.write('<li>')
+res.write('<a href="/">Voltar</a>')
+res.write('</li>')
+res.write('</ul>')
+res.write('</body>')
+res.write('</html>')
+
+res.write('<!-- Wallpaper do jogo https://wallpaperscraft.com/catalog/space/3840x2160 -->')
 });
 
 app.use('/css', express.static(__dirname + '/css'));
