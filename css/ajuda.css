@@ -1,7 +1,6 @@
 body{
 	background-image: url("space5.jpg");
 	background-size:cover;
-	background-repeat: no-repeat;
 	margin: 0;
     padding: 0;
     height: 100vh;
@@ -10,10 +9,10 @@ body{
 
 .tex{
 	text-align: center;
-    font-size: 80px;
+    font-size: 60px;
     color: white;
     margin: 0px;
-    padding: 30px;
+    padding: 15px;
 }
 p{
 	color: #ffff;
