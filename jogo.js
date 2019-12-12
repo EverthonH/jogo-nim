@@ -158,11 +158,12 @@ app.get("/sobre", function(req, res){
 	res.write('<ul style="position: absolute; left: 0; bottom: 20px;">');
 	res.write('<li><a href="/">Voltar</a></li>');
 	res.write('</ul>');
+	
 
 	
 res.write('</body>');
 res.write('</html>');
-
+res.write()
 });
 app.get("/ajuda", function(req, res){
 	
@@ -201,6 +202,7 @@ res.write('</body>');
 res.write('</html>');
 
 res.write('<!-- Wallpaper do jogo https://wallpaperscraft.com/catalog/space/3840x2160 -->')
+	res.write()
 });
 
 app.use('/css', express.static(__dirname + '/css'));
