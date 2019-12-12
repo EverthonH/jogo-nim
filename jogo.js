@@ -163,7 +163,7 @@ app.get("/sobre", function(req, res){
 	
 res.write('</body>');
 res.write('</html>');
-res.write()
+res.end();
 });
 app.get("/ajuda", function(req, res){
 	
@@ -202,7 +202,7 @@ res.write('</body>');
 res.write('</html>');
 
 res.write('<!-- Wallpaper do jogo https://wallpaperscraft.com/catalog/space/3840x2160 -->')
-	res.write()
+	res.end();
 });
 
 app.use('/css', express.static(__dirname + '/css'));
