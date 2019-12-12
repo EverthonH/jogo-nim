@@ -3,7 +3,7 @@ body{
 	background-image: url("space2.jpg");
 	background-size:cover;
 	background-repeat: no-repeat;
-	margin: 0;
+	margin: 41px;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -177,7 +177,7 @@ ul li a:hover:before
     text-shadow: 4px 2px 3px black;
     text-align: center;
     font-size: 27px;
-    padding: 20px;
+    padding: 30px;
     margin: 0px;
    width: 100%;
 	
