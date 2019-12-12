@@ -21,14 +21,16 @@ var tabela = gel();
 app.get ('/', function (req, res) {
 	tabela = gel();
 	res.render ('menu.html', {'nome':'nim'});
+	
 });
 app.get("/jogo", function(req, res){
 	var i = parseInt(req.query.i) || 0;
 	var j = parseInt(req.query.j) || 0;
 	/*console.log(i, j);*/
 	if(i >= 0 && j >= 0) {
+		if(tabela[i][j] != 0){
 		jogador = (jogador + 1) % 2;
-		tabela[i][j] = 0;
+	}	tabela[i][j] = 0;
 		
 		//logica do jogo {
 		}
@@ -64,14 +66,14 @@ for(i = 0;i<tabela.length;i++){
 
 	res.write('</table>');
 
-	if(soma == 0  && jogador == 0){
+	if(soma == 0  && jogador == 1){
 		res.write(`<h1>Mais uma Ficha Por favor, Jogador 1 Ganhou.</h1>`);
 	}
-	else if(soma == 0  && jogador == 1 ){
+	else if(soma == 0  && jogador == 0 ){
 		res.write(`<h1>Mais uma Ficha Por favor, Jogador 2 Ganhou.</h1>`);
 	}
   
-	else if(jogador == 1){
+	else if(jogador == 0){
 		res.write('<p>Jogador 1</p>');
 	}
 	else{
@@ -150,7 +152,7 @@ app.get("/sobre", function(req, res){
 			res.write('</div>');
 		res.write('</div>');
 	res.write('<div class="go">');
-	 res.write ('<p class="pp">Verção 0.2--22/11/2019.</br>IFPE -Instituto Federal de Educação Ciência e Tecnologia de Pernambuco </br>Lógica de programação.</br>')
+	 res.write ('<p class="pp">Verção 0.3--12/12/2019.</br>IFPE -Instututo Federal de Edurção Ciencia e Tecnologia de Pernambuco </br>Lógica de programação.</br>')
 	res.write('</p>');
 	res.write('<img class="img-sobre" src="logo.png">');
 	res.write('<ul style="position: absolute; left: 0; bottom: 20px;">');
@@ -182,7 +184,7 @@ res.write('<p >Cada jogada consiste em retirar algumas (ou todas) as peças de u
 res.write('</p>');
 res.write('<h2 class="tex">ORIGEM DO NIM</h2>');
 	
-res.write('<p>Nim é um jogo que foi criado na antiga China para dois jogadores. Foi o primeiro jogo a ser estudado pela Matemática.</p>')
+res.write('<p>Nim é um jogo que foi criando na antiga China para dois jogadores. Foi o primeiro jogo a ser estudado pela Matemática.</p>')
 
 res.write('<h2 class="tex" >HISTORIA</h2>');
 res.write('<p>A origem do NIM é desconhecida, sendo jogado desde a antiguidade. O nome foi dado por um Matematico Americano chamado Charles L.<br /> Bouton em um artigo de 1902, onde estuda a teoria matemática do jogo.</br> O jogo ganhou notoriedade com a aparição no filme "O ano passado em Marienbad" de Alain Resnais, em 1961.</p>');
