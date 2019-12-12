@@ -4,9 +4,9 @@ O jogo dispõe das seguintes regras:("Cada jogada consiste em retirar algumas (o
 
 
 ## Imagens do Game
-imagens/telainicial.png"
-imagens/menu.png"
-imagens/ajuda.png"
-imagens/sobre.png"
-imagens/jogar.png"
+<img scr = "imagens/telainicial.png">
+<img src = "imagens/menu.png">
+<img src = "imagens/ajuda.png">
+<img src = "imagens/sobre.png">
+<img src = "imagens/jogar.png">
 
