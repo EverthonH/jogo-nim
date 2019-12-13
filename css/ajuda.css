@@ -42,7 +42,7 @@ ul li a
 	color: #fff;
 	text-transform: uppercase;
 	left: 100px;
-    bottom: 78px;
+    /*bottom: 78px;*/
     position: absolute;
 }
 ul:hover li a
