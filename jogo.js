@@ -188,7 +188,7 @@ res.write('<h2 class="tex">ORIGEM DO NIM</h2>');
 res.write('<p>Nim é um jogo que foi criando na antiga China para dois jogadores. Foi o primeiro jogo a ser estudado pela Matemática.</p>')
 
 res.write('<h2 class="tex" >HISTORIA</h2>');
-res.write('<p>A origem do NIM é desconhecida, sendo jogado desde a antiguidade. O nome foi dado por um Matematico Americano chamado Charles L.<br /> Bouton em um artigo de 1902, onde estuda a teoria matemática do jogo.</br> O jogo ganhou notoriedade com a aparição no filme "O ano passado em Marienbad" de Alain Resnais, em 1961.</p>');
+res.write('<p>O nome foi dado por um Matematico Americano chamado Charles L.<br /> Bouton em um artigo de 1902, onde estuda a teoria matemática do jogo.</br> O jogo ganhou notoriedade com a aparição no filme "O ano passado em Marienbad" de Alain Resnais, em 1961.</p>');
 
 	
 
