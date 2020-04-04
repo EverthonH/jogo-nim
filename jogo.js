@@ -67,10 +67,10 @@ for(i = 0;i<tabela.length;i++){
 	res.write('</table>');
 
 	if(soma == 0  && jogador == 1){
-		res.write(`<h1>Mais uma Ficha Por favor, Jogador 1 Ganhou.</h1>`);
+		res.write(`<h1>Mais uma Ficha Porfavor, Jogador 1 Ganhou.</h1>`);
 	}
 	else if(soma == 0  && jogador == 0 ){
-		res.write(`<h1>Mais uma Ficha Por favor, Jogador 2 Ganhou.</h1>`);
+		res.write(`<h1>Mais uma Ficha Porfavor, Jogador 2 Ganhou.</h1>`);
 	}
   
 	else if(jogador == 0){
